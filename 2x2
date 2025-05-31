@@ -1,0 +1,32 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "FxZ Hub Beta", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "INF FISH",
+	Callback = function()
+      		print("button pressed")
+print("if you make it go over 500 it will start lagging or crashing and fuck up plr data so dont.")
+
+local slotsyouwant = 100 -- Put the amount of slots you want
+
+-- ignore
+for i = 1, slotsyouwant do
+    task.spawn(function()
+        local args = {
+            [1] = 1,
+            [2] = tostring(i) .. "\0", 
+            [3] = 0,
+            [4] = ""
+        }
+
+        workspace:WaitForChild("UpdateSlotOrderRE"):FireServer(unpack(args))
+    end)
+end
+  	end    
+})
